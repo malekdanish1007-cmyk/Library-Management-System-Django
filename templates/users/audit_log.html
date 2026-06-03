@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Audit Log</h4>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>User</th>
+                <th>Action</th>
+                <th>Description</th>
+                <th>IP Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for log in logs %}
+              <tr>
+                <td>{{ log.timestamp }}</td>
+                <td>{{ log.user|default:"Anonymous" }}</td>
+                <td>
+                  {% if log.action == 'LOGIN_FAILED' or log.action == 'ACCESS_DENIED' %}
+                    <span class="badge badge-danger">{{ log.action }}</span>
+                  {% elif log.action == 'LOGIN_SUCCESS' %}
+                    <span class="badge badge-success">{{ log.action }}</span>
+                  {% else %}
+                    <span class="badge badge-info">{{ log.action }}</span>
+                  {% endif %}
+                </td>
+                <td>{{ log.description }}</td>
+                <td>{{ log.ip_address|default:"-" }}</td>
+              </tr>
+              {% empty %}
+              <tr><td colspan="5" class="text-center">No logs yet.</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

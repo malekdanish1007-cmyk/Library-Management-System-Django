@@ -54,3 +54,33 @@ class Librarian(AbstractUser, AbstractBaseModel):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+    
+from django.conf import settings
+
+class AuditLog(models.Model):
+    ACTION_CHOICES = [
+        ('LOGIN_SUCCESS', 'Login Success'),
+        ('LOGIN_FAILED',  'Login Failed'),
+        ('LOGOUT',        'Logout'),
+        ('CREATE',        'Create'),
+        ('UPDATE',        'Update'),
+        ('DELETE',        'Delete'),
+        ('ACCESS_DENIED', 'Access Denied'),
+    ]
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True, blank=True,
+        on_delete=models.SET_NULL,
+        related_name='audit_logs'
+    )
+    action      = models.CharField(max_length=50, choices=ACTION_CHOICES)
+    description = models.TextField()
+    ip_address  = models.GenericIPAddressField(null=True, blank=True)
+    timestamp   = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-timestamp']
+
+    def __str__(self):
+        return f"{self.timestamp} | {self.action} | {self.user}"

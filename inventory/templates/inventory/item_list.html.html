@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Inventory</h2>
+<ul>
+  {% for item in items %}
+    <li>
+      {{ item.name }} - {{ item.quantity }} units - ${{ item.price }}
+      {% if user.is_authenticated and user.groups.filter(name='Admin').exists %}
+        <a href="{% url 'item_edit' item.pk %}">Edit</a>
+        <a href="{% url 'item_delete' item.pk %}">Delete</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

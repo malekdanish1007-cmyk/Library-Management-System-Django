@@ -20,7 +20,7 @@ from core.logging_formatter import CustomJsonFormatter as JsonFormatter
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-environ.Env.read_env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -29,9 +29,9 @@ environ.Env.read_env()
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG", default=False)
+DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -50,6 +50,7 @@ THIRD_PARTY_APPS = []
 LOCAL_APPS = [
     "users",
     "library",
+    "inventory",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -70,7 +71,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "DIRS": [BASE_DIR / "templates"],  # 👈 this is critical
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -78,11 +79,11 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "library.context_processors.greeting",
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = "core.wsgi.application"
 
@@ -91,15 +92,9 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("POSTGRES_DB"),
-        "USER": env("POSTGRES_USER"),
-        "PASSWORD": env("POSTGRES_PASSWORD"),
-        "HOST": env("POSTGRES_HOST"),
-        "PORT": env("POSTGRES_PORT"),
-    }
+    'default': env.db(default='sqlite:///db.sqlite3')
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -169,3 +164,28 @@ LOGGING = {
     },
     "root": {"level": "INFO", "handlers": ["console"]},
 }
+
+# ── Password Hashing (Argon2 - OWASP ASVS V2) ───────────────────────────────
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+]
+
+# ── Session Security (OWASP ASVS V2 / A2) ───────────────────────────────────
+SESSION_COOKIE_HTTPONLY = True          # JS cannot access session cookie
+SESSION_COOKIE_SECURE = False           # Set True when HTTPS is enabled
+SESSION_COOKIE_AGE = 1800               # Auto-logout after 30 minutes idle
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # Session ends when browser closes
+CSRF_COOKIE_HTTPONLY = False            # Must be False for Django CSRF to work
+CSRF_COOKIE_SECURE = False              # Set True when HTTPS is enabled
+
+# ── Secure HTTP Headers (OWASP ASVS V14) ────────────────────────────────────
+SECURE_BROWSER_XSS_FILTER = True        # Adds X-XSS-Protection header
+X_FRAME_OPTIONS = "DENY"                # Prevents clickjacking
+SECURE_CONTENT_TYPE_NOSNIFF = True      # Prevents MIME-type sniffing
+
+# ── File Upload Limits (OWASP ASVS V12) ─────────────────────────────────────
+FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440   # 2.5 MB max
+DATA_UPLOAD_MAX_MEMORY_SIZE = 2621440
+MEDIA_ROOT = BASE_DIR / "uploads"       # Stored outside web root
+MEDIA_URL = "/media/"
