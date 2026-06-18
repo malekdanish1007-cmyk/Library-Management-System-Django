@@ -1,82 +1,68 @@
-# Library-Management-System-Django
-A Simple Library Management System that helps in managing a library.
+# Library Management System (Secure Web Application)
 
-### Available Functionalities:
-Definition: CRUD(Create, Read, Update and Delete)
-1. Members Management (Allows CRUD operations on Library Members)
-2. Books Management (Allows CRUD operations on Books)
-3. Lending of Books to Members.
-4. Returning of Books by Members.
-5. Payment for Borrowing A Book/Books by Members
-6. Payments for fines on overdue books By Members.
+## 1. Project Description
+A secure Django-based library management system implementing OWASP Top 10 
+controls, RBAC, audit logging, and secure coding practices.
 
-### To run the project locally, follow the following instructions:
-- Clone the repository
-  ```sql
-  git clone https://github.com/hellen-22/Library-Management-System-Django.git
-  ```
-- Navigate to the project directory.
-  ```sql
-  cd Library-Management-System-Django
-  ```
-- Create virtual environment and activate it:
-  ```sql
-  python3 -m venv venv or python -m venv venv
-  ```
-  Activate: On Windows
-  ```sql
-  venv\Scripts\activate
-  ```
-  On Mac
-  ```sql
-  source venv\bin\activate
-  ```
-- Install libraries from the requirements.txt file.
-  ```sql
-  pip install -r requirement.txt
-  ```
-- Edit the *.env.sample* file to add your environment variables.
-- Set up the database:
-  ```sql
-  python manage.py migrate
-  ```
-- Run the server:
-  ```sql
-  python manage.py runserver
-  ```
+## 2. Installation Steps
+1. Clone the repository: `git clone <repo-url>`
+2. Create virtual environment: `python -m venv venv`
+3. Activate venv: `venv\Scripts\activate` (Windows)
+4. Install dependencies: `pip install -r requirements.txt`
+5. Copy `.env.example` to `.env` and fill in your own SECRET_KEY
+6. Run migrations: `python manage.py migrate`
+7. Run server: `python manage.py runserver`
 
-### Hosted version
-Hosted version of the project: https://library-wnd0.onrender.com/
+## 3. Security Features Summary
+- Argon2 password hashing
+- CSRF protection enabled
+- Session timeout (30 min)
+- RBAC (Admin / User roles)
+- Audit logging (login attempts, CRUD actions)
+- Input validation via Django Forms
+- Custom error pages (400/403/404/500)
+- Secure HTTP headers (X-Frame-Options, X-Content-Type-Options)
 
-Use the following credentials:
-```sql
-Email: admin@gmail.com
-Password: Admin@LMS
-```
-Or register an account.
+## 4. How to Run the App
+python manage.py runserver
+Then visit http://127.0.0.1:8000/
 
-### Screenshots
-Login and Register Pages.
-<img width="1440" alt="Screenshot 2024-02-15 at 11 57 31" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/5843a91c-c721-4a6d-bbbc-761c0ff6a713">
+## 5. Dependencies
+See `requirements.txt` for full list. Key packages:
+- Django 5.0.1
+- argon2-cffi
+- whitenoise
 
-<img width="1439" alt="Screenshot 2024-02-15 at 11 57 06" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/8ea7d534-8371-4e4c-afa1-1e62e4bd64f9">
+## 6. Screenshots
+<img width="1600" height="898" alt="image" src="https://github.com/user-attachments/assets/edacc284-2c8d-4b5f-9335-808989077a5b" />
+Login page
 
-Dashboard.
-<img width="1426" alt="Screenshot 2024-02-15 at 12 05 50" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/db263fab-8589-474f-8b09-fb781fcd466c">
+<img width="1600" height="839" alt="9d2aaba8-d32b-4249-9192-90e7a2255a53" src="https://github.com/user-attachments/assets/38be0d64-c726-4d28-8f36-726209a23ed1" />
+Login failed page
 
-Members Pages.
-<img width="1440" alt="Screenshot 2024-02-15 at 12 07 04" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/ffb20c12-8a48-46a5-88a4-64744e40cd40">
+<img width="1600" height="798" alt="image" src="https://github.com/user-attachments/assets/65a23720-f6b1-406b-867b-e8b95ddcb97d" />
+Dasbboard
 
-<img width="1424" alt="Screenshot 2024-02-15 at 12 06 48" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/26abb84b-0a3f-4e27-872f-b9a58e36f597">
+<img width="1600" height="758" alt="image" src="https://github.com/user-attachments/assets/5379c9c9-1bef-42fe-a44e-0815f6876a1f" />
+iventory list 
 
-Books Pages.
-<img width="1424" alt="Screenshot 2024-02-15 at 12 09 15" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/7e18dd67-229f-4456-8278-f1252d66d387">
+<img width="1600" height="799" alt="ec3a437c-8fee-42f7-b6bd-89aff04c0890" src="https://github.com/user-attachments/assets/3a6f860d-da41-4943-81e3-8a59951ca249" />
+Iventory add item
 
-<img width="1423" alt="Screenshot 2024-02-15 at 12 08 49" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/74461a23-b1b9-4af8-a924-2d7312e4762f">
+<img width="1600" height="794" alt="9a3b2312-d162-46bd-ac82-8890072bb264" src="https://github.com/user-attachments/assets/f34c4ca8-a137-4402-a37d-ba8eacae1077" />
+iventory edit item
 
-Other Pages.
-<img width="1439" alt="Screenshot 2024-02-15 at 12 16 03" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/99f3dfc9-4136-4187-aa51-933a97ef161e">
+<img width="1600" height="747" alt="1dc1e160-1bbc-4615-a867-9585dfe11f75" src="https://github.com/user-attachments/assets/a364cc79-6185-49dc-a998-7cc59ba2528b" />
+Profile page
 
-<img width="1423" alt="Screenshot 2024-02-15 at 12 13 50" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/643579b1-7811-44c4-a07a-03b5196ccbe5">
+<img width="1600" height="822" alt="7e6a13c0-8468-403a-bb73-f97f67d8473a" src="https://github.com/user-attachments/assets/e757bb5b-42de-4c27-96cc-8965b4863587" />
+Audit log page
 
-<img width="1425" alt="Screenshot 2024-02-15 at 12 18 37" src="https://github.com/hellen-22/Library-Management-System-Django/assets/58620060/91cc7d5c-a15c-4755-ad1b-b112fd098420">
+<img width="1600" height="853" alt="image" src="https://github.com/user-attachments/assets/5f4703a0-d557-49a5-be52-60f7089a8907" />
+404 page
+
+<img width="1600" height="790" alt="64390508-48d6-4340-b302-18797879b985" src="https://github.com/user-attachments/assets/a54b1cce-3ab6-4d99-bb49-249b50d56491" />
+Book module
+
+<img width="1600" height="790" alt="e9b27a90-effd-44a3-b008-47fa3127ba19" src="https://github.com/user-attachments/assets/40e5a3b3-ba00-4a4d-8a88-4e1bae205aca" />
+members module
