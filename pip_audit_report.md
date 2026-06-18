@@ -1,0 +1,37 @@
+
+Name | Version | ID | Fix Versions
+--- | --- | --- | ---
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-28](https://osv.dev/vulnerability/PYSEC-2024-28) | 3.2.24,4.2.10,5.0.2
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-28](https://osv.dev/vulnerability/PYSEC-2024-28) | 3.2.24,4.2.10,5.0.2
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-47](https://osv.dev/vulnerability/PYSEC-2024-47) | 3.2.25,4.2.11,5.0.3
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-47](https://osv.dev/vulnerability/PYSEC-2024-47) | 3.2.25,4.2.11,5.0.3
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-58](https://osv.dev/vulnerability/PYSEC-2024-58) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-57](https://osv.dev/vulnerability/PYSEC-2024-57) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-56](https://osv.dev/vulnerability/PYSEC-2024-56) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-59](https://osv.dev/vulnerability/PYSEC-2024-59) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-69](https://osv.dev/vulnerability/PYSEC-2024-69) | 4.2.15,5.0.8
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-70](https://osv.dev/vulnerability/PYSEC-2024-70) | 4.2.15,5.0.8
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-68](https://osv.dev/vulnerability/PYSEC-2024-68) | 4.2.15,5.0.8
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-67](https://osv.dev/vulnerability/PYSEC-2024-67) | 4.2.15,5.0.8
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-13](https://osv.dev/vulnerability/PYSEC-2025-13) | 4.2.20,5.0.13,5.1.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-102](https://osv.dev/vulnerability/PYSEC-2024-102) | 4.2.16,5.0.9,5.1.1
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-156](https://osv.dev/vulnerability/PYSEC-2024-156) | 4.2.17,4.2.17,5.0.10,5.0.10,5.1.4,5.1.4
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-157](https://osv.dev/vulnerability/PYSEC-2024-157) | 4.2.17,4.2.17,5.0.10,5.0.10,5.1.4,5.1.4
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-157](https://osv.dev/vulnerability/PYSEC-2024-157) | 4.2.17,5.0.10,5.1.4
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-156](https://osv.dev/vulnerability/PYSEC-2024-156) | 4.2.17,5.0.10,5.1.4
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-1](https://osv.dev/vulnerability/PYSEC-2025-1) | 4.2.18,5.0.11,5.1.5
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-1](https://osv.dev/vulnerability/PYSEC-2025-1) | 4.2.18,4.2.18,5.0.11,5.0.11,5.1.5,5.1.5
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-14](https://osv.dev/vulnerability/PYSEC-2025-14) | 5.0.14,5.1.8
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-13](https://osv.dev/vulnerability/PYSEC-2025-13) | 4.2.20,5.0.13,5.1.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-47](https://osv.dev/vulnerability/PYSEC-2025-47) | 4.2.22,5.1.10,5.2.2
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-105](https://osv.dev/vulnerability/PYSEC-2025-105) | 4.2.24,5.1.12,5.2.6
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-56](https://osv.dev/vulnerability/PYSEC-2024-56) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-59](https://osv.dev/vulnerability/PYSEC-2024-59) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-57](https://osv.dev/vulnerability/PYSEC-2024-57) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2024-58](https://osv.dev/vulnerability/PYSEC-2024-58) | 4.2.14,5.0.7
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-107](https://osv.dev/vulnerability/PYSEC-2025-107) | 4.2.26,5.1.14,5.2.8
+[django](https://pypi.org/project/django/) | 5.0.1 | [PYSEC-2025-108](https://osv.dev/vulnerability/PYSEC-2025-108) | 4.2.26,5.1.14,5.2.8
+[django](https://pypi.org/project/django/) | 5.0.1 | [CVE-2024-45231](https://osv.dev/vulnerability/CVE-2024-45231) | 4.2.16,5.0.9,5.1.1
+[gunicorn](https://pypi.org/project/gunicorn/) | 21.2.0 | [CVE-2024-1135](https://osv.dev/vulnerability/CVE-2024-1135) | 22.0.0
+[gunicorn](https://pypi.org/project/gunicorn/) | 21.2.0 | [CVE-2024-6827](https://osv.dev/vulnerability/CVE-2024-6827) | 22.0.0
+[pip](https://pypi.org/project/pip/) | 26.1.1 | [PYSEC-2026-196](https://osv.dev/vulnerability/PYSEC-2026-196) | 26.1.2
